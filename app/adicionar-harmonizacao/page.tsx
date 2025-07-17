@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
-import { Upload, ArrowLeft, Save, ImageIcon } from "lucide-react" // Added Sparkles icon
+import { Upload, ArrowLeft, Save, ImageIcon } from "lucide-react" 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -16,14 +16,13 @@ import Image from "next/image"
 interface HarmonizationFormData {
   title: string
   description: string
-  item1Name: string // Renamed from wineName
-  item2Name: string // Renamed from foodName
+  item1Name: string 
+  item2Name: string 
   imageUrl: string
-  item1Color: string // Renamed from wineColor
+  item1Color: string 
   userId: string
 }
 
-// More generic color options, can be expanded
 const itemColors = [
   { name: "Vermelho (Escuro)", value: "text-red-700" },
   { name: "Vermelho (Claro)", value: "text-red-500" },
@@ -46,16 +45,15 @@ export default function AddHarmonizationPage() {
   const [formData, setFormData] = useState<HarmonizationFormData>({
     title: "",
     description: "",
-    item1Name: "", // Renamed
-    item2Name: "", // Renamed
+    item1Name: "", 
+    item2Name: "", 
     imageUrl: "",
-    item1Color: "text-red-700", // Default color
+    item1Color: "text-red-700", 
     userId: user?.id || "",
   })
 
   const [errors, setErrors] = useState<Record<string, string>>({})
 
-  // Redirect if not logged in
   useEffect(() => {
     if (!user) {
       router.push("/")
@@ -98,8 +96,8 @@ export default function AddHarmonizationPage() {
 
     if (!formData.title.trim()) newErrors.title = "Título é obrigatório"
     if (!formData.description.trim()) newErrors.description = "Descrição é obrigatória"
-    if (!formData.item1Name.trim()) newErrors.item1Name = "Nome do Item 1 é obrigatório" // Updated
-    if (!formData.item2Name.trim()) newErrors.item2Name = "Nome do Item 2 é obrigatório" // Updated
+    if (!formData.item1Name.trim()) newErrors.item1Name = "Nome do Item 1 é obrigatório" 
+    if (!formData.item2Name.trim()) newErrors.item2Name = "Nome do Item 2 é obrigatório" 
     if (!formData.imageUrl) newErrors.imageUrl = "Imagem é obrigatória"
 
     setErrors(newErrors)

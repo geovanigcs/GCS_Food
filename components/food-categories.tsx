@@ -27,14 +27,13 @@ export default function FoodCategories() {
           throw new Error(`HTTP error! status: ${response.status}`)
         }
         const data = await response.json()
-        // Add mock description, image, and example for display purposes
         const formattedCategories = data.map((c: any) => ({
           id: c.id,
           name: c.name,
           emoji: c.emoji,
-          description: `Receitas para o estilo ${c.name}`, // Placeholder
-          image: `/placeholder.svg?height=200&width=300`, // Placeholder
-          example: `Exemplo de ${c.name}`, // Placeholder
+          description: `Receitas para o estilo ${c.name}`, 
+          image: `/placeholder.svg?height=200&width=300`, 
+          example: `Exemplo de ${c.name}`, 
         }))
         setCategories(formattedCategories)
       } catch (e: any) {

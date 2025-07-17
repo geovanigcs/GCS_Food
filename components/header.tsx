@@ -23,7 +23,6 @@ export default function Header() {
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault()
-    // Implementar busca
     console.log("Buscar:", searchQuery)
   }
 
@@ -36,9 +35,14 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3 group">
               <div className="flex items-center gap-2">
                 <ChefHat className="w-8 h-8 text-amber-600 group-hover:rotate-12 transition-transform duration-300" />
-                <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-red-600 bg-clip-text text-transparent">
-                  GCS Food
-                </span>
+                <div className="flex flex-col">
+                  <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-red-600 bg-clip-text text-transparent mr-2">
+                    GCS
+                  </span>
+                  <span className="text-2xl font-bold bg-gradient-to-r from-amber-600 to-red-600 bg-clip-text text-transparent mr-2">
+                    Food
+                  </span>
+                </div>
               </div>
             </Link>
 

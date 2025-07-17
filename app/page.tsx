@@ -17,7 +17,7 @@ import AnimatedBackground from "@/components/animated-background"
 function FloatingAddButton() {
   const { user } = useAuth()
 
-  if (!user) return null // O botão só aparece se o usuário estiver logado
+  if (!user) return null
 
   return (
     <Link href="/adicionar-receita">
@@ -39,7 +39,7 @@ export default function Home() {
       <PairingSection />
       <DailyTips />
       <ContactSection />
-      <FloatingAddButton /> {/* O botão é renderizado aqui */}
+      <FloatingAddButton /> 
     </main>
   )
 }

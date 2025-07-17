@@ -13,7 +13,6 @@ export default function Footer() {
       className="bg-gray-100 dark:bg-gray-900 py-12 border-t border-gray-200 dark:border-gray-700"
     >
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-gray-700 dark:text-gray-300">
-        {/* Brand Info */}
         <div className="space-y-4">
           <Link href="/" className="flex items-center gap-2 group">
             <ChefHat className="w-8 h-8 text-amber-600 group-hover:rotate-12 transition-transform duration-300" />
@@ -26,7 +25,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4">Links Rápidos</h3>
           <ul className="space-y-2">
@@ -69,17 +67,14 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4">Contato</h3>
           <ul className="space-y-2">
-            <li>Email: contato@gcsfood.com</li>
-            <li>Telefone: (XX) XXXX-XXXX</li>
-            <li>Endereço: Rua da Culinária, 123 - Sabor City</li>
+            <li>Email: geovanigcs.dev@gmail.com</li>
+            <li>Telefone: (61) 98154-2702</li>
           </ul>
         </div>
 
-        {/* Social Media */}
         <div>
           <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4">Siga-nos</h3>
           <div className="flex space-x-4">
