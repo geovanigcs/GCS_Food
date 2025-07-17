@@ -64,7 +64,6 @@
   }
 }
 
-/* Custom animations */
 @keyframes float {
   0%,
   100% {
@@ -79,17 +78,14 @@
   animation: float 3s ease-in-out infinite;
 }
 
-/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom gradient backgrounds */
 .bg-wine-50 {
   background-color: #fdf2f8;
 }
 
-/* GSAP and Framer Motion optimizations */
 .will-change-transform {
   will-change: transform;
 }

@@ -16,14 +16,13 @@ interface Nationality {
   imageUrl: string
 }
 
-// Dados mockados para as nacionalidades
 const mockNationalities: Nationality[] = [
   {
     id: "br",
     name: "Brasileira",
     flagEmoji: "🇧🇷",
     featuredDish: "Feijoada",
-    imageUrl: "/placeholder.svg?height=200&width=300",
+    imageUrl: "/images/feijoada.jpeg",
   },
   {
     id: "it",
@@ -37,7 +36,7 @@ const mockNationalities: Nationality[] = [
     name: "Japonesa",
     flagEmoji: "🇯🇵",
     featuredDish: "Sushi",
-    imageUrl: "/placeholder.svg?height=200&width=300",
+    imageUrl: "/images/sushi.jpg",
   },
   {
     id: "mx",

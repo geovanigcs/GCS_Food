@@ -141,7 +141,6 @@ export default function AddHarmonizationPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-wine-50 dark:from-gray-900 dark:to-gray-800 pt-24">
       <div className="max-w-4xl mx-auto px-6 py-8">
-        {/* Header */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-8">
           <Link href="/">
             <Button variant="ghost" className="gap-2 hover:bg-purple-100 dark:hover:bg-gray-700 mb-6">
@@ -159,7 +158,6 @@ export default function AddHarmonizationPage() {
         </motion.div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Basic Information */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
             <Card className="shadow-lg border-0 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm">
               <CardHeader>

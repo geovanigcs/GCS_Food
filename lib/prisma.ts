@@ -1,13 +1,7 @@
-// This file simulates a Prisma Client for the v0 environment.
-// In a real Next.js application, you would install Prisma and
-// initialize it like this:
-// import { PrismaClient } from '@prisma/client';
-// const prisma = new PrismaClient();
-// export default prisma;
 
-import type { User, Recipe, Nationality, Category, Harmonization } from "./database" // Using existing types
 
-// Mock data to simulate database records
+import type { User, Recipe, Nationality, Category, Harmonization } from "./database"
+
 const mockUsers: User[] = [
   {
     id: "user-1",
@@ -15,7 +9,7 @@ const mockUsers: User[] = [
     firstName: "João",
     lastName: "Silva",
     password: "hashedpassword",
-    google_id: null,
+    google_id: undefined,
     created_at: new Date().toISOString(),
   },
   {
@@ -28,11 +22,11 @@ const mockUsers: User[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: "admin", // Ensure admin user exists for recipes
-    email: "admin@gcsfood.com",
-    firstName: "Admin",
-    lastName: "GCS",
-    password: "$2a$10$example", // Placeholder, replace with a real hash in production
+    id: "admin", 
+    email: "geovanigcs",
+    firstName: "Geovani",
+    lastName: "Cordeiro",
+    password: "chama1", 
     google_id: null,
     created_at: new Date().toISOString(),
   },
@@ -93,7 +87,7 @@ const mockRecipes: Recipe[] = [
       "Deixe descansar por 10 minutos antes de servir",
     ],
     utensils: ["Panela grande", "Refratário", "Espátula", "Ralador de queijo"],
-    image_url: "/placeholder.svg?height=400&width=600",
+    image_url: "/placeholder.jpg?height=400&width=600",
     prep_time: 90,
     servings: 8,
     difficulty: "Médio",
@@ -122,7 +116,7 @@ const mockRecipes: Recipe[] = [
       "Misture tudo e sirva com acompanhamentos",
     ],
     utensils: ["Panela de pressão", "Panela grande", "Frigideira"],
-    image_url: "/placeholder.svg?height=400&width=600",
+    image_url: "/images/feijoada.jpeg",
     prep_time: 180,
     servings: 6,
     difficulty: "Difícil",
@@ -152,7 +146,7 @@ const mockRecipes: Recipe[] = [
       "Corte e sirva com acompanhamentos",
     ],
     utensils: ["Esteira de bambu", "Faca afiada", "Tigela"],
-    image_url: "/placeholder.svg?height=400&width=600",
+    image_url: "/images/sushi.jpg",
     prep_time: 45,
     servings: 4,
     difficulty: "Médio",
@@ -270,7 +264,7 @@ const mockRecipes: Recipe[] = [
     servings: 10,
     difficulty: "Médio",
     user_id: "admin",
-    nationality_id: "us", // Assuming a generic origin for vegan recipes
+    nationality_id: "us", 
     category_id: "vegan",
     created_at: "2024-07-01T16:00:00Z",
   },
@@ -301,7 +295,7 @@ const mockRecipes: Recipe[] = [
     servings: 4,
     difficulty: "Fácil",
     user_id: "admin",
-    nationality_id: "it", // Can be associated with Italian cuisine
+    nationality_id: "it", 
     category_id: "soup",
     created_at: "2024-07-10T19:00:00Z",
   },
@@ -313,10 +307,10 @@ const mockHarmonizations: Harmonization[] = [
     title: "Cabernet Sauvignon & Filé ao Molho Madeira",
     description:
       "A robustez do Cabernet complementa perfeitamente a intensidade da carne e o sabor rico do molho madeira.",
-    item1Name: "Cabernet Sauvignon", // Renamed
-    item2Name: "Filé ao Molho Madeira", // Renamed
+    item1Name: "Cabernet Sauvignon", 
+    item2Name: "Filé ao Molho Madeira", 
     imageUrl: "/placeholder.svg?height=200&width=300",
-    item1Color: "text-red-700", // Renamed
+    item1Color: "text-red-700", 
     userId: "user-1",
     createdAt: "2024-01-20T10:00:00Z",
   },
@@ -325,10 +319,10 @@ const mockHarmonizations: Harmonization[] = [
     title: "Chardonnay & Queijos Maduros",
     description:
       "A cremosidade e notas amanteigadas do Chardonnay realçam os sabores complexos e a textura dos queijos maduros.",
-    item1Name: "Chardonnay", // Renamed
-    item2Name: "Queijos Maduros", // Renamed
+    item1Name: "Chardonnay", 
+    item2Name: "Queijos Maduros", 
     imageUrl: "/placeholder.svg?height=200&width=300",
-    item1Color: "text-yellow-600", // Renamed
+    item1Color: "text-yellow-600", 
     userId: "user-2",
     createdAt: "2024-02-01T15:30:00Z",
   },
@@ -337,10 +331,10 @@ const mockHarmonizations: Harmonization[] = [
     title: "Pinot Noir & Salmão Grelhado",
     description:
       "A delicadeza e os taninos suaves do Pinot Noir harmonizam com a suavidade e a gordura do salmão grelhado.",
-    item1Name: "Pinot Noir", // Renamed
-    item2Name: "Salmão Grelhado", // Renamed
+    item1Name: "Pinot Noir", 
+    item2Name: "Salmão Grelhado", 
     imageUrl: "/placeholder.svg?height=200&width=300",
-    item1Color: "text-red-500", // Renamed
+    item1Color: "text-red-500", 
     userId: "user-1",
     createdAt: "2024-03-05T11:45:00Z",
   },
@@ -351,7 +345,7 @@ const mockHarmonizations: Harmonization[] = [
     item1Name: "Queijo Brie",
     item2Name: "Geleia de Damasco",
     imageUrl: "/placeholder.svg?height=200&width=300",
-    item1Color: "text-orange-400", // Using an existing color for a non-wine item
+    item1Color: "text-orange-400", 
     userId: "user-1",
     createdAt: "2024-07-17T10:00:00Z",
   },
@@ -362,7 +356,7 @@ const mockHarmonizations: Harmonization[] = [
     item1Name: "Cerveja IPA",
     item2Name: "Hambúrguer Artesanal",
     imageUrl: "/placeholder.svg?height=200&width=300",
-    item1Color: "text-yellow-800", // Using an existing color for a non-wine item
+    item1Color: "text-yellow-800", 
     userId: "user-2",
     createdAt: "2024-07-17T11:00:00Z",
   },
@@ -390,7 +384,6 @@ const mockHarmonizations: Harmonization[] = [
   },
 ]
 
-// Function to simulate Prisma Client methods
 const prisma = {
   user: {
     findMany: async () => mockUsers,
@@ -425,7 +418,7 @@ const prisma = {
         filtered = filtered.filter((r) => r.category_id === where.categoryId)
       }
       if (where?.OR) {
-        const searchQuery = where.OR[0].title.contains.toLowerCase() // Assuming search is always on title/description
+        const searchQuery = where.OR[0].title.contains.toLowerCase() 
         filtered = filtered.filter(
           (r) => r.title.toLowerCase().includes(searchQuery) || r.description.toLowerCase().includes(searchQuery),
         )
