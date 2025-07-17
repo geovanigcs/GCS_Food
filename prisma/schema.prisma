@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         String    @id @default(cuid())
+  email      String    @unique
+  password   String?
+  firstName  String    @map("first_name")
+  lastName   String    @map("last_name")
+  googleId   String?   @unique @map("google_id")
+  createdAt  DateTime  @default(now()) @map("created_at")
+  recipes    Recipe[]
+  harmonizations Harmonization[]
+
+  @@map("users")
+}
+
+model Nationality {
+  id         String    @id @default(cuid())
+  name       String    @unique
+  flagEmoji  String?   @map("flag_emoji")
+  createdAt  DateTime  @default(now()) @map("created_at")
+  recipes    Recipe[]
+
+  @@map("nationalities")
+}
+
+model Category {
+  id         String    @id @default(cuid())
+  name       String    @unique
+  emoji      String?
+  createdAt  DateTime  @default(now()) @map("created_at")
+  recipes    Recipe[]
+
+  @@map("categories")
+}
+
+model Recipe {
+  id            String      @id @default(cuid())
+  title         String
+  description   String
+  ingredients   String[]
+  instructions  String[]
+  utensils      String[]    @default([]) // New field
+  imageUrl      String?     @map("image_url")
+  prepTime      Int?        @map("prep_time")
+  servings      Int?
+  difficulty    String
+  createdAt     DateTime    @default(now()) @map("created_at")
+
+  userId        String      @map("user_id")
+  user          User        @relation(fields: [userId], references: [id])
+
+  nationalityId String      @map("nationality_id")
+  nationality   Nationality @relation(fields: [nationalityId], references: [id])
+
+  categoryId    String      @map("category_id")
+  category      Category    @relation(fields: [categoryId], references: [id])
+
+  @@map("recipes")
+}
+
+model Harmonization {
+  id          String    @id @default(cuid())
+  title       String
+  description String
+  item1Name   String    @map("item1_name") // Renamed from wineName
+  item2Name   String    @map("item2_name") // Renamed from foodName
+  imageUrl    String?   @map("image_url")
+  item1Color  String?   @map("item1_color") // Renamed from wineColor
+  userId      String    @map("user_id")
+  user        User      @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@map("harmonizations")
+}
