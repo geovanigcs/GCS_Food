@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ChefHat, Instagram, Facebook, Youtube, Twitter } from "lucide-react"
+import { ChefHat, Instagram, Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 export default function Footer() {
   return (
@@ -70,8 +70,10 @@ export default function Footer() {
         <div>
           <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4">Contato</h3>
           <ul className="space-y-2">
-            <li>Email: geovanigcs.dev@gmail.com</li>
-            <li>Telefone: (61) 98154-2702</li>
+            <li><a target="_blank"
+              href="mailto:geovanigcs.dev@gmail.com">Email: geovanigcs.dev@gmail.com</a></li>
+            <li><a target="_blank"
+              href="http://wa.me/5561981542702">Telefone: (61) 98154-2702</a></li>
           </ul>
         </div>
 
@@ -79,32 +81,39 @@ export default function Footer() {
           <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 mb-4">Siga-nos</h3>
           <div className="flex space-x-4">
             <a
-              href="#"
+              href="https://www.instagram.com/geovanigcs/"
+              target="_blank"
               aria-label="Instagram"
               className="text-gray-600 hover:text-pink-500 dark:text-gray-400 dark:hover:text-pink-400 transition-colors"
             >
               <Instagram className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              aria-label="Facebook"
+              href="https://github.com/geovanigcs"
+              target="_blank"
+
+              aria-label="Github"
               className="text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-500 transition-colors"
             >
-              <Facebook className="w-6 h-6" />
+              <Github className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              aria-label="YouTube"
+              href="https://www.linkedin.com/in/geovanicordeirodev/"
+              target="_blank"
+
+              aria-label="LinkedIn"
               className="text-gray-600 hover:text-red-600 dark:text-gray-400 dark:hover:text-red-500 transition-colors"
             >
-              <Youtube className="w-6 h-6" />
+              <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="#"
-              aria-label="Twitter"
+              href="mailto:geovanigcs.dev@gmail.com"
+              target="_blank"
+
+              aria-label="E-mail"
               className="text-gray-600 hover:text-blue-400 dark:text-gray-400 dark:hover:text-blue-300 transition-colors"
             >
-              <Twitter className="w-6 h-6" />
+              <Mail className="w-6 h-6" />
             </a>
           </div>
         </div>
